@@ -1,0 +1,47 @@
+---
+title: "Analysis MPG ~ . in MTCARS"
+author: "Sahil"
+date: "4/21/2021"
+output: ioslides_presentation
+subtitle: Effect of Various Variables on Vehicle MPG
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+## Intro to MTCARS
+
+### First 6 rows of Dataset
+
+``` {r mtcars, comment ="", echo = TRUE}
+
+head(mtcars)
+
+```
+
+## Purpose
+
+ - To use interactive plot to examine relationship between mpg and all other variables in the MTCARS dataset 
+
+## How it was done
+
+```r
+   output$fit <- renderPrint({
+        summary(fit())
+    })
+    
+      output$mpgPlot <- renderPlot({
+        with(dataset, { 
+          plot(as.formula(formula()))
+          abline(fit(), col="blue")
+        })
+    })
+```
+
+## Further Details
+
+For more details on the assignment please visit www.coursera.com and look into the Data Products course
+
+Thank you
